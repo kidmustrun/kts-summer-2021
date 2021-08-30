@@ -14,7 +14,7 @@ export default class ApiStore implements IApiStore {
       const response: Response = await fetch(`${this.baseUrl}${params.endpoint}`, {
         method: params.method,
         headers: params.headers,
-        body: JSON.stringify(params.data) // для GET запросов консоль ругается на наличие body в параметрах
+        body: JSON.stringify(params.data)
       });
 
       const data = await response.json();
