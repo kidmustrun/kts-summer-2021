@@ -7,12 +7,12 @@ export type RequestParams<ReqT> = {
     method: HTTPMethod; 
     endpoint: string;
     headers: Record<string, string>;
-    data: ReqT;
+    data?: ReqT;
 }
 
-enum StatusHTTP {
+export enum StatusHTTP {
     OK = 200,
-    INTERNAL_SERVER_ERROR = 500
+    INTERNAL_SERVER_ERROR = 0
 }
 
 export type ApiResponse<SuccessT, ErrorT> =

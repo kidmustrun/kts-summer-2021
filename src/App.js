@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { testGetRequest } from './root/root';
-testGetRequest()
+import './root/root'
 function App() {
   return (
     <div className="App">
