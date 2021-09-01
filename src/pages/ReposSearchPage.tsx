@@ -7,8 +7,6 @@ import SearchIcon from "@components/SearchIcon";
 import GitHubStore from "@store/GitHubStore/GitHubStore";
 
 const ReposSearchPage = () => {
-  // eslint-disable-next-line no-console
-  console.log("repos is rendered");
   const [orgInput, setOrg] = useState("");
   const [repos, setRepos] = useState<any | []>([]);
   const [isLoading, setDisabled] = useState(false);
