@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "./root/root";
 import ReposSearchPage from "./pages";

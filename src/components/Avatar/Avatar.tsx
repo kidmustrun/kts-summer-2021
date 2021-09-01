@@ -18,4 +18,4 @@ const Avatar: React.FC<AvatarProps> = ({ src, letter }) => {
     );
 };
 
-export default Avatar;
+export default React.memo(Avatar);

@@ -159,6 +159,7 @@ body {
 
 .card__text_info {
     display: flex;
+    align-items: baseline;
 }
 
 .stars {

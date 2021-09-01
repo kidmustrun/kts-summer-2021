@@ -2,12 +2,12 @@ import React from "react";
 export type ButtonProps = {
   children: React.ReactNode;
   disabled: boolean;
-  findRepo?: (e: React.MouseEvent) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
-const Button: React.FC<ButtonProps> = ({ children, disabled, findRepo }) => {
+const Button: React.FC<ButtonProps> = ({ children, disabled, onClick }) => {
   return (
     <button
-      onClick={findRepo}
+      onClick={onClick}
       className="search-form__button"
       disabled={disabled}
     >

@@ -1,4 +1,6 @@
+import React from "react";
+
 const SearchIcon = () => {
   return <span className="material-icons-outlined">search</span>;
 };
-export default SearchIcon;
+export default React.memo(SearchIcon);

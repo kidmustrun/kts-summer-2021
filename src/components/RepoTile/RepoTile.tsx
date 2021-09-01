@@ -2,7 +2,7 @@ import React from "react";
 
 import Avatar from "@components/Avatar";
 import StarIcon from "@components/StarIcon";
-import { ApiResp } from "@store/GitHubStore/types";
+import moment from "moment";
 
 export type RepoTileProps = {
   item: any;
@@ -11,7 +11,10 @@ export type RepoTileProps = {
 const RepoTile: React.FC<RepoTileProps> = ({ item }) => {
   return (
     <div className="card">
-      <Avatar src={item.avatar_url} />
+      <Avatar
+        src={item.avatar_url}
+        letter={item.name.charAt(0).toUpperCase()}
+      />
       <div className="card__text">
         <div className="card__text_title">{item.name}</div>
         <div className="card__text_author">{item.owner.login}</div>
@@ -20,10 +23,12 @@ const RepoTile: React.FC<RepoTileProps> = ({ item }) => {
             <StarIcon />
             <span className="stars__count">{item.stargazers_count}</span>
           </div>
-          <div className="changes">Updated {item.updated_at}</div>
+          <div className="changes">
+            {`Updated ${moment(item.updated_at).format("DD MMM yyyy")}`}
+          </div>
         </div>
       </div>
     </div>
   );
 };
-export default RepoTile;
+export default React.memo(RepoTile);

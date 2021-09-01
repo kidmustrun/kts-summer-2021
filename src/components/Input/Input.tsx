@@ -1,6 +1,6 @@
 import React from "react";
 export type InputProps = {
-  value: string;
+  value?: string;
   placeholder: string;
   onChange?: (e: React.ChangeEvent) => void;
 };
