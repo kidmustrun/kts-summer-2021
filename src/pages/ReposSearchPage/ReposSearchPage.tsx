@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Button from "@components/Button";
 import Input from "@components/Input";
@@ -7,6 +7,7 @@ import SearchIcon from "@components/SearchIcon";
 import GitHubStore from "@store/GitHubStore/GitHubStore";
 
 import { useReposContext } from "../../App";
+import styles from "./ReposSearchPage.module.scss";
 
 const ReposSearchPage = () => {
   const reposContext = useReposContext();
@@ -29,8 +30,8 @@ const ReposSearchPage = () => {
   reposContext.repos = repos;
   reposContext.isLoading = isLoading;
   return (
-    <div className="container">
-      <div className="search-form">
+    <div className={styles.container}>
+      <div className={styles.searchform}>
         <Input
           placeholder="Введите название организации"
           value={orgInput}
@@ -46,7 +47,7 @@ const ReposSearchPage = () => {
           <SearchIcon />
         </Button>
       </div>
-      <div className="cards">
+      <div className={styles.cards}>
         {!reposContext.repos.message ? (
           reposContext.repos.map((rep: any) => (
             <RepoTile item={rep} key={rep.id}></RepoTile>

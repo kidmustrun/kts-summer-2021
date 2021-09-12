@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+.searchform__input {
+    grid-area: input;
+    height: 50px;
+    width: 100%;
+    min-width: 295px;
+    padding-left: 12px;
+    border: 1px solid $lightgrey_color;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.searchform__input:focus {
+    border: 1px solid $orangered_color;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.searchform__input:disabled {
+    background: $input_color;
+    border: 1px solid $lightgrey_color;
+}

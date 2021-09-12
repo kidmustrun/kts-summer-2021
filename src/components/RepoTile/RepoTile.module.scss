@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+.card {
+  padding: 12px;
+  background: $white_color;
+  border: 1px solid $lightgrey_color;
+  box-sizing: border-box;
+  border-radius: 6px;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: $box_shadow;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card__text {
+  padding: 11px 0;
+  margin: 0 12px;
+  max-width: 75%;
+}
+
+.card__text_title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card__text_author {
+  margin-bottom: 4px;
+  transition: all 0.1s ease;
+  display: inline-block;
+}
+
+.card__text_author:hover {
+  color: $link_color;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.card__text_info {
+  display: flex;
+  align-items: baseline;
+}
+
+.stars {
+  margin-right: 20px;
+}
+
+.stars__count {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: $grey_color;
+}
+
+.changes {
+  color: $grey_color;
+  font-size: 14px;
+  vertical-align: middle;
+}

@@ -29,7 +29,7 @@ const RepoPage = () => {
     return;
   });
   return (
-    <div className="container">
+    <>
       <Breadcrumb>
         <Breadcrumb.Item onClick={handleClick}>
           <a href="">Repos</a>
@@ -54,8 +54,7 @@ const RepoPage = () => {
           />
         </Col>
       </Row>
-      ,
-    </div>
+    </>
   );
 };
 export default RepoPage;

@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+.searchform__button {
+    grid-area: button;
+    background: $orangered_color;
+    border-radius: 6px;
+    border: none;
+    width: 50px;
+    color: $white_color;
+    font-family: "Material Icons", sans-serif;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.searchform__button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchform__button:disabled {
+    background: $lightgrey_color;
+}

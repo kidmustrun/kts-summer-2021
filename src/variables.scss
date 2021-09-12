@@ -1,0 +1,13 @@
+$orangered_color: #ff5555;
+$lightgrey_color: #d9d9d9;
+$white_color: #fff;
+$input_color: #f9f9f9;
+$link_color: #208fbf;
+$grey_color: #7e7e7e;
+$star_color: #ff9432;
+$box_shadow: 0px 2px 6px rgba(182, 182, 182, 0.25);
+
+@mixin card_logo($width, $height) {
+  width: $width;
+  height: $height;
+}
