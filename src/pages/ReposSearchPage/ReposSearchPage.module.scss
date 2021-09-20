@@ -1,0 +1,29 @@
+.container {
+  padding: 5vh 20vw;
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "form"
+    "cards";
+}
+
+@media screen and (max-width: 998px) {
+  .container {
+    padding: 5vh 0;
+  }
+}
+
+.searchform {
+  display: grid;
+  gap: 12px;
+  grid-template-areas: "input button";
+  grid-area: form;
+  grid-template-columns: auto 50px;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-rows: 1fr;
+  grid-area: cards;
+}

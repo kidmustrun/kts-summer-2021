@@ -6,10 +6,14 @@ import RepoTile from "@components/RepoTile";
 import SearchIcon from "@components/SearchIcon";
 import GitHubStore from "@store/GitHubStore/GitHubStore";
 
+import { useReposContext } from "../../App";
+import styles from "./ReposSearchPage.module.scss";
+
 const ReposSearchPage = () => {
-  const [orgInput, setOrg] = useState("");
+  const reposContext = useReposContext();
   const [repos, setRepos] = useState<any | []>([]);
   const [isLoading, setDisabled] = useState(false);
+  const [orgInput, setOrg] = useState("");
   function getRepos() {
     setDisabled(true);
     const gitHubStore = new GitHubStore();
@@ -22,9 +26,12 @@ const ReposSearchPage = () => {
         setDisabled(false);
       });
   }
+  reposContext.getRepos = getRepos;
+  reposContext.repos = repos;
+  reposContext.isLoading = isLoading;
   return (
-    <div className="container">
-      <div className="search-form">
+    <div className={styles.container}>
+      <div className={styles.searchform}>
         <Input
           placeholder="Введите название организации"
           value={orgInput}
@@ -33,13 +40,18 @@ const ReposSearchPage = () => {
             setOrg(element.value);
           }}
         />
-        <Button disabled={isLoading} onClick={() => getRepos()}>
+        <Button
+          disabled={reposContext.isLoading}
+          onClick={() => reposContext.getRepos()}
+        >
           <SearchIcon />
         </Button>
       </div>
-      <div className="cards">
-        {!repos.message ? (
-          repos.map((rep: any) => <RepoTile item={rep} key={rep.id}></RepoTile>)
+      <div className={styles.cards}>
+        {!reposContext.repos.message ? (
+          reposContext.repos.map((rep: any) => (
+            <RepoTile item={rep} key={rep.id}></RepoTile>
+          ))
         ) : (
           <h3>Такой организации не найдено.</h3>
         )}
