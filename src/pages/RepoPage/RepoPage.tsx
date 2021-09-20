@@ -16,18 +16,16 @@ const RepoPage = () => {
   function handleClick() {
     history.push("/repos");
   }
-  useEffect(() => {
-    const gitHubStore = new GitHubStore();
-    gitHubStore
-      .getRepo({
-        owner: owner,
-        repo: name,
-      })
-      .then((result) => {
-        setRepo(result);
-      });
-    return;
-  });
+
+  const gitHubStore = new GitHubStore();
+  gitHubStore
+    .getRepo({
+      owner: owner,
+      repo: name,
+    })
+    .then((result) => {
+      setRepo(result);
+    });
   return (
     <>
       <Breadcrumb>
