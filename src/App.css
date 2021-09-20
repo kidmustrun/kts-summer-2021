@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: "Roboto", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    padding: 5vh 20vw;
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "form"
+        "cards";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (max-width: 998px) {
+    .container {
+        padding: 5vh 0;
+    }
+
 }
 
-.App-link {
-  color: #61dafb;
+.search-form {
+    display: grid;
+    gap: 12px;
+    grid-template-areas:
+        "input button";
+    grid-area: form;
+    grid-template-columns: auto 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-form__input {
+    grid-area: input;
+    height: 50px;
+    width: 100%;
+    min-width: 295px;
+    padding-left: 12px;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.search-form__input:focus {
+    border: 1px solid #FF5555;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-form__input:disabled {
+    background: #F9F9F9;
+    border: 1px solid #D9D9D9;
+}
+
+.search-form__button {
+    grid-area: button;
+    background: #FF5555;
+    border-radius: 6px;
+    border: none;
+    width: 50px;
+    color: #fff;
+    font-family: "Material Icons", sans-serif;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.search-form__button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-form__button:disabled {
+    background: #D9D9D9;
+}
+
+.cards {
+    display: grid;
+    gap: 16px;
+    grid-template-rows: 1fr;
+    grid-area: cards;
+}
+
+.card {
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 2px 6px rgba(182, 182, 182, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card__logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 12px;
+}
+
+.card__logo_colorful {
+    background: #FF5555;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    line-height: 80px;
+    font-size: 40px;
+}
+
+.card__logo_img {
+    background: url("@assets/avatar.png");
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    line-height: 80px;
+    font-size: 40px;
+}
+
+.card__text {
+    padding: 11px 0;
+    margin: 0 12px;
+    max-width: 75%;
+}
+
+.card__text_title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card__text_author {
+    margin-bottom: 4px;
+    transition: all 0.1s ease;
+    display: inline-block;
+}
+
+.card__text_author:hover {
+    color: #208FBF;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.card__text_info {
+    display: flex;
+    align-items: baseline;
+}
+
+.stars {
+    margin-right: 20px;
+}
+
+.stars__icon {
+    font-family: "Material Icons", sans-serif;
+    color: #FF9432;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.stars__count {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #7E7E7E;
+}
+
+.changes {
+    color: #7E7E7E;
+    font-size: 14px;
+    vertical-align: middle;
 }
